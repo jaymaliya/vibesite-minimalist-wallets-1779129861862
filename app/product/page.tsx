@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCart } from "../../components/CartContext";
 
@@ -25,7 +25,7 @@ function Stars({ n }: { n: number }) {
   return <span style={{ color: "#c6c6c6", letterSpacing: "2px" }}>{"★".repeat(n)}{"☆".repeat(5 - n)}</span>;
 }
 
-export default function ProductPage() {
+function ProductContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { addItem, totalItems } = useCart();
@@ -253,5 +253,13 @@ export default function ProductPage() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function ProductPage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: "100vh", background: "#121414" }} />}>
+      <ProductContent />
+    </Suspense>
   );
 }
