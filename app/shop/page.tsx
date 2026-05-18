@@ -126,73 +126,7 @@ export default function ShopPage() {
   };
 
   return (
-    <>
-      <style>{`
-
-        .page-enter {
-          animation: pageEnter 0.6s ease forwards;
-        }
-        @keyframes pageEnter {
-          from { opacity: 0; transform: translateY(16px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .card-enter {
-          opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .card-enter.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .card-hover {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-          transform: translateY(-4px);
-        }
-        .btn-lift {
-          transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-        .btn-lift:hover {
-          transform: translateY(-2px);
-        }
-        .hover-show { opacity: 0; transition: opacity 0.3s ease; }
-        .hover-hide { transition: opacity 0.3s ease; }
-        .product-img-wrapper:hover .hover-show { opacity: 1; }
-        .product-img-wrapper:hover .hover-hide { opacity: 0; }
-        .product-img-wrapper:hover .img-zoom { transform: scale(1.06); }
-        .img-zoom { transition: transform 0.5s ease; }
-        .quick-add-overlay {
-          transform: translateY(100%);
-          transition: transform 0.3s ease-in-out;
-        }
-        .product-img-wrapper:hover .quick-add-overlay {
-          transform: translateY(0);
-        }
-        .filter-btn {
-          transition: all 0.2s ease;
-        }
-        input[type="checkbox"]:checked {
-          accent-color: #c6c6c6;
-        }
-        .material-symbols-outlined {
-          font-family: 'Material Symbols Outlined';
-          font-weight: normal;
-          font-style: normal;
-          display: inline-block;
-          line-height: 1;
-          letter-spacing: normal;
-          text-transform: none;
-          white-space: nowrap;
-          word-wrap: normal;
-          direction: ltr;
-          font-feature-settings: 'liga';
-          -webkit-font-feature-settings: 'liga';
-          -webkit-font-smoothing: antialiased;
-        }
-      `}</style>
-      <div
+            <div
         className="page-enter bg-[#121414] text-[#e3e2e2] min-h-screen flex flex-col antialiased"
         style={{ fontFamily: "Inter, sans-serif" }}
       >
@@ -553,6 +487,6 @@ export default function ShopPage() {
           </div>
         </footer>
       </div>
-    </>
-  );
+    )
+;
 }
